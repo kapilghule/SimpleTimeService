@@ -4,30 +4,43 @@ A lightweight Node.js service that returns the current timestamp and visitor IP.
 
 # Step 1: How to Build
 
-bash
+bash:
 docker build -t simpletimeservice .
 
 # Step 2: How to Run
-bash
+bash:
 docker run simpletimeservice
 
 # Step 3: Verifying the Service
 To test from inside the container:
 
 Get the container ID: 
-bash
+bash:
 docker ps
 
 # Step 4: Exec into the container:
 
-bash
+bash:
 docker exec -it <container_id> curl http://localhost:3000
 
 # Step 5: if you wish to access it from your host: Accessing from Host Machine
 
 To access the service from your browser or tools like curl on your host machine, run the container with port mapping:
 
-bash
+bash:
 docker run -p 3000:3000 simpletimeservice
 
 ****Then open your browser and go to: http://localhost:3000****
+
+=======================================================================================================================
+
+****Optional: Add a README on Docker Hub****
+
+You can add my image repository on the Docker Hub web interface
+
+bash:
+docker pull kapilghule/simpletimeservice:latest
+docker run -p 3000:3000 kapilghule/simpletimeservice:latest
+
+See the service running on http://localhost:3000
+
